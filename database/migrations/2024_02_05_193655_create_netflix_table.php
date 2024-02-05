@@ -11,19 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('netflix', function (Blueprint $table) {
+            $table->unsignedBigInter('project_id');
+            $table->foreign('project_id');
             $table->id();
-            $table->string("name");
-            $table->string("description");
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('netflixes');
     }
 };
