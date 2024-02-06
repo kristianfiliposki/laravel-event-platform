@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Movie extends Model
 {
     use HasFactory;
-
-    public function posts()
-    {
+    public function Movie(){
         return 
             $this->belongTo(netflix::class);
-            $this->belongToMany('App\Models\Movie');
+            $this->hasMany(Category::class);
 
     }
 }

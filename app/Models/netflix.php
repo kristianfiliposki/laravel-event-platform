@@ -10,6 +10,8 @@ class netflix extends Model
     use HasFactory;
     public function netflix()
     {
-        return $this->hasMany(User::class);
+        return 
+            $this->hasMany(Movie::class);
+
     }
 }
