@@ -10,8 +10,7 @@ class Movie extends Model
     use HasFactory;
     public function Movie(){
         return 
-            $this->belongTo(netflix::class);
-            $this->hasMany(Category::class);
+            $this->hasMany(Tag::class);
 
     }
 }
