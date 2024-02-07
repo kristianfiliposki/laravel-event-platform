@@ -11,6 +11,6 @@ class Tag extends Model
 
     public function posts()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsToMany('App\models\Movie');
     }
 }

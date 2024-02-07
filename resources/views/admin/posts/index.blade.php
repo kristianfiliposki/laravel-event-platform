@@ -4,16 +4,16 @@
     <div class="content">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
-                @foreach ($posts as $post)
+                @foreach ($movies as $movie)
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">{{ $post->name }}</div>
+                            <div class="card-header">{{ $movie->name }}</div>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                {{ $post->category ? $post->category->name : 'senza categoria' }}
-                            </h6>
-                            <div class="card-body">{{ $post->description }}</div>
+{{--                                 {{ $post->category ? $post->category->name : 'senza categoria' }}
+ --}}                            </h6>
+                            <div class="card-body">{{ $movie->cast }}</div>
                             <div class="card-body">
-                                @if (count($post->tags) > 0)
+{{--                                 @if (count($movie->tags) > 0)
                                     <ul>
                                         @foreach ($post->tags as $tag)
                                             <li>{{ $tag->name }}</li>
@@ -21,7 +21,7 @@
                                     </ul>
                                 @else
                                     <span>Non ci sono tag collegati</span>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </div>

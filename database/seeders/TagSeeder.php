@@ -11,33 +11,41 @@ class TagSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()
     {
         $tags = [
             [
-                'name' => 'countries',
+                'type' => 'economy',
             ],
             [
-                'name' => 'economy',
+                'type' => 'economy',
             ],
             [
-                'name' => 'cucina',
+                'type' => 'economy',
             ],
             [
-                'name' => 'cars',
+                'type' => 'economy',
             ],
             [
-                'name' => 'AI',
+                'type' => 'economy',
             ],
             [
-                'name' => 'bitcoin',
+                'type' => 'economy',
             ],
+            [
+                'type' => 'economy',
+            ],
+            [
+                'type' => 'economy',
+            ],
+
         ];
 
         foreach ($tags as $tag) {
-            $newTag = new Tag();
-            $newTag->fill($tag);
-            $newTag->save();
+            $newTags=new tag;
+            $newTags->type=$tag['type'];
+            $newTags->save();
         }
+
     }
 }

@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StorenetflixRequest;
-use App\Http\Requests\UpdatenetflixRequest;
-use App\Models\netflix;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
+use App\Models\Movie;
 
-class NetflixController extends Controller
+class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $movies = Movie::all();
+        return view('admin.posts.index',compact('movies'));
     }
 
     /**
@@ -27,7 +29,7 @@ class NetflixController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorenetflixRequest $request)
+    public function store(StoreMovieRequest $request)
     {
         //
     }
@@ -35,7 +37,7 @@ class NetflixController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(netflix $netflix)
+    public function show(Movie $movie)
     {
         //
     }
@@ -43,7 +45,7 @@ class NetflixController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(netflix $netflix)
+    public function edit(Movie $movie)
     {
         //
     }
@@ -51,7 +53,7 @@ class NetflixController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatenetflixRequest $request, netflix $netflix)
+    public function update(UpdateMovieRequest $request, Movie $movie)
     {
         //
     }
@@ -59,7 +61,7 @@ class NetflixController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(netflix $netflix)
+    public function destroy(Movie $movie)
     {
         //
     }

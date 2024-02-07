@@ -10,7 +10,7 @@ class Movie extends Model
     use HasFactory;
     public function Movie(){
         return 
-            $this->hasMany(Tag::class);
+            $this->belongsToMany('App\models\Tag');
 
     }
 }

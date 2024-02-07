@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MovieController;
+use App\Http\Controllers\Admin\TagController;
+
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
-use App\Http\Controllers\Admin\PostController;
-use App\Models\Post;
+use App\Models\Movie;
+use App\Models\Tag;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +20,7 @@ use App\Models\Post;
 |
 */
 
-Route::get('/', function () {
-    $posts = Post::all();
-    return view('welcome', compact("posts"));
-    // return view('welcome');
-});
+Route::get('/' ,[MovieController::class,'index']);
 
 Route::middleware(['auth'])
     ->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
@@ -31,8 +31,8 @@ Route::middleware(['auth'])
         // - il percorso "/" diventa "admin/"
         // - il nome della rotta ->name("dashboard") diventa ->name("admin.dashboard")
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('movies',MovieController::class);
 
-        Route::resource("posts", PostController::class);
     });
 
 require __DIR__ . '/auth.php';

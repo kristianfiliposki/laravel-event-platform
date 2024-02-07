@@ -46,15 +46,15 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.posts.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.posts.index') }}">
-                                    <i class="fa-solid fa-list fa-lg fa-fw"></i> Posts List
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.movies.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.movies.index') }}">
+                                    <i class="fa-solid fa-list fa-lg fa-fw"></i>  List
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.posts.create' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.posts.create') }}">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.movies.create' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-plus fa-lg fa-fw"></i> New Post
                                 </a>
                             </li>
