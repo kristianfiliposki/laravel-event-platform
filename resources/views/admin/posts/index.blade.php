@@ -8,20 +8,14 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-header">{{ $movie->name }}</div>
-                            <h6 class="card-subtitle mb-2 text-muted">
-{{--                                 {{ $post->category ? $post->category->name : 'senza categoria' }}
- --}}                            </h6>
                             <div class="card-body">{{ $movie->cast }}</div>
+
                             <div class="card-body">
-{{--                                 @if (count($movie->tags) > 0)
                                     <ul>
-                                        @foreach ($post->tags as $tag)
-                                            <li>{{ $tag->name }}</li>
+                                        @foreach ($movie->tags as $tag)
+                                            <li>{{ $tag->type }}</li>
                                         @endforeach
                                     </ul>
-                                @else
-                                    <span>Non ci sono tag collegati</span>
-                                @endif --}}
                             </div>
                         </div>
                     </div>

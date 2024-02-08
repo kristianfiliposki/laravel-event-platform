@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movies_tags', function (Blueprint $table) {
+        Schema::create('movie_tag', function (Blueprint $table) {
             
             $table->unsignedBigInteger('tag_id');
             $table  ->foreign('tag_id')
@@ -25,10 +25,11 @@ return new class extends Migration
                     ->references('id')
                     ->on('movies')
                     ->onDelete('CASCADE');
-
+            
         });
     }
 
+    
     /**
      * Reverse the migrations.
      */

@@ -33,7 +33,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+
+        $newMovie->fill($data);
+        $newMovie->save();
+        $newMovie->movies()->attach($request->movies);
+        return redirect()->route("admin.tags.index");
+ 
     }
 
     /**

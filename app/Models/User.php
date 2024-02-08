@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     public function netflix()
     {
-        return $this->belongTO(netflix::class);
+        return $this->BelongsToMany(Movie::class);
     }
 
     /**

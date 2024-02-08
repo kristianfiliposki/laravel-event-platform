@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\models\Tag;
+use App\models\User;
+
 
 class Movie extends Model
 {
     use HasFactory;
-    public function Movie(){
-        return 
-            $this->belongsToMany('App\models\Tag');
+    public function tags(){
+            return $this->belongsToMany(Tag::class);
 
     }
 }

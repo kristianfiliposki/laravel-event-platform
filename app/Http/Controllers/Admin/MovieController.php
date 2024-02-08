@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMovieRequest;
 use App\Http\Requests\UpdateMovieRequest;
 use App\Models\Movie;
+use App\Models\Tag;
+
 
 class MovieController extends Controller
 {
@@ -14,8 +16,9 @@ class MovieController extends Controller
      */
     public function index()
     {
+        $tags=Tag::all();
         $movies = Movie::all();
-        return view('admin.posts.index',compact('movies'));
+        return view('admin.posts.index',compact('movies'),compact('tags'));
     }
 
     /**
@@ -29,9 +32,14 @@ class MovieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMovieRequest $request)
+    public function store(StoreMovieRequest $request,Movie $movie)
     {
-        //
+    
+       $movies = Movie::all();
+       $movies->tags()->attach($request->tags);
+       return redirect()->route("admin.movies.index");
+
+
     }
 
     /**
